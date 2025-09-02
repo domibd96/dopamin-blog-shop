@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zahlung abgebrochen - DailyDopamin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .cancel-main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .cancel-icon {
+      font-size: 5rem;
+      color: #FF4F9A;
+      margin-bottom: 30px;
+      animation: shake 0.5s ease-in-out;
+    }
+
+    .cancel-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #FF4F9A;
+      margin-bottom: 20px;
+      text-shadow: 0 0 30px rgba(255, 79, 154, 0.5);
+    }
+
+    .cancel-message {
+      color: #ffffff;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cancel-details {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 25px;
+      padding: 30px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(255, 79, 154, 0.1);
+    }
+
+    .cancel-details h3 {
+      color: #FF4F9A;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cancel-details p {
+      color: #cccccc;
+      margin-bottom: 10px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .back-to-cart-btn {
+      background: linear-gradient(135deg, #FF4F9A, #FF69B4);
+      color: #ffffff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 25px rgba(255, 79, 154, 0.4);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-to-cart-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(255, 79, 154, 0.6);
+      background: linear-gradient(135deg, #FF69B4, #FF4F9A);
+    }
+
+    .back-to-shop-btn {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FF4F9A;
+      border: 2px solid rgba(255, 79, 154, 0.3);
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-to-shop-btn:hover {
+      background: rgba(255, 79, 154, 0.1);
+      border-color: #FF4F9A;
+      transform: translateY(-3px);
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    @media (max-width: 768px) {
+      .cancel-title {
+        font-size: 2.5rem;
+      }
+      
+      .cancel-message {
+        font-size: 1.1rem;
+      }
+      
+      .cancel-details {
+        padding: 25px;
+      }
+      
+      .action-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cancel-main {
+        padding: 40px 15px;
+      }
+      
+      .cancel-title {
+        font-size: 2rem;
+      }
+      
+      .cancel-icon {
+        font-size: 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">DailyDopamin</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="ueber.html">Über</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cancel-main">
+    <div class="cancel-icon">❌</div>
+    <h1 class="cancel-title">Zahlung abgebrochen</h1>
+    
+    <p class="cancel-message">
+      Die PayPal-Zahlung wurde abgebrochen. Keine Sorge - Ihre Bestellung wurde nicht abgeschlossen 
+      und es wurden keine Kosten berechnet.
+    </p>
+
+    <div class="cancel-details">
+      <h3>Was können Sie tun?</h3>
+      <p>🛒 Kehren Sie zu Ihrem Warenkorb zurück und versuchen Sie es erneut</p>
+      <p>💳 Verwenden Sie eine andere Zahlungsmethode</p>
+      <p>📧 Kontaktieren Sie uns bei Problemen</p>
+      <p>🔄 Oder stöbern Sie weiter in unserem Shop</p>
+    </div>
+
+    <div class="action-buttons">
+      <a href="shop.html" class="back-to-cart-btn">Zum Warenkorb</a>
+      <a href="shop.html" class="back-to-shop-btn">Weiter einkaufen</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyJourneyNotes. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html> 

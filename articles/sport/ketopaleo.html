@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artikel-Layout - DailyDopamin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      color: #ffffff;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .article-meta {
+      color: #FF4F9A;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .article-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 0 0 1.5rem 0;
+      color: #FF4F9A;
+      line-height: 1.2;
+      text-shadow: 0 0 30px rgba(255, 79, 154, 0.3);
+    }
+
+    .article-image {
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin: 2rem auto;
+      display: block;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .article-image:hover {
+      transform: scale(1.02);
+    }
+
+    .article-content {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      padding: 3rem;
+      border-radius: 25px;
+      line-height: 1.8;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 79, 154, 0.1);
+      margin-top: 2rem;
+    }
+
+    .article-content p {
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+
+    .article-content h2 {
+      color: #FF4F9A;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem 0;
+      text-shadow: 0 0 15px rgba(255, 79, 154, 0.3);
+    }
+
+    .article-content h3 {
+      color: #FF69B4;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .article-content ul, .article-content ol {
+      margin: 1.5rem 0;
+      padding-left: 2rem;
+    }
+
+    .article-content li {
+      margin: 0.5rem 0;
+      color: #e0e0e0;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid #FF4F9A;
+      padding-left: 2rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #FF69B4;
+      background: rgba(255, 79, 154, 0.05);
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .article-title {
+        font-size: 2.5rem;
+      }
+      
+      .article-content {
+        padding: 2rem;
+      }
+      
+      .article-image {
+        height: 250px;
+      }
+      
+      .article-meta {
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    header {
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 20px 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    header:hover {
+      background: rgba(26, 26, 26, 0.98);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    }
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #FF4F9A;
+      text-shadow: 0 0 10px rgba(255, 79, 154, 0.5);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .nav-logo:hover {
+      color: #FF69B4;
+      text-shadow: 0 0 15px rgba(255, 79, 154, 0.8);
+      transform: scale(1.05);
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li {
+      display: inline;
+      position: relative;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #FF4F9A;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+      padding: 8px 16px;
+      border-radius: 20px;
+    }
+    .nav-links a:hover {
+      color: #ff99cc;
+    }
+    footer {
+      background-color: rgba(26, 26, 26, 0.95);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">DailyDopamin</div>
+    <nav>
+      <ul class="nav-links">
+        <li><button class="invisible-click-area" aria-label="Zur Startseite"></button><a href="../../index.html">Home</a></li>
+        <li><button class="invisible-click-area" aria-label="Zum Blog"></button><a href="#blog">Blog</a></li>
+        <li><button class="invisible-click-area" aria-label="Zur Über-Seite"></button><a href="../../ueber.html">Über</a></li>
+        <li><button class="invisible-click-area" aria-label="Zur Kontakt-Seite"></button><a href="../../kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="container">
+    <div class="article-header">
+      <div class="article-meta" id="articleMeta">
+        <!-- Werte werden via JS gesetzt -->
+        <span>📅 <span id="articleDate">12.03.24</span></span>
+        <span>⏳ <span id="readingTime">5</span> MIN</span>
+        <span>👤 <span id="articleAuthor">Dom</span></span>
+      </div>
+      <h1 class="article-title" id="articleTitle">ARTIKELTITEL</h1>
+    </div>
+    
+    <article>
+      <img id="articleImage" src="" alt="Artikelbild" class="article-image">
+      <div id="articleContent" class="article-content"></div>
+    </article>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 DailyDopamin. Alle Rechte vorbehalten.</p>
+  </footer>
+  
+  <script>
+    // Artikel-Daten (inline)
+    const articleData = {
+      title: "Intermittierendes Fasten (16/8) und Muskelhypertrophie – Chancen und potenzielle Stolpersteine",
+      image: "img/ernaehrung/fasten.jpeg",
+      content: `Ernährung im Fokus: Paleo, Keto, Vegan – Vor- und Nachteile im Vergleich
+Von Steinzeit-Diät bis Pflanzenpower – welche Ernährung passt zu welchem Ziel?
+
+Die Diskussion um die "richtige" Ernährung ist so lebendig wie nie. Im Mittelpunkt stehen dabei drei Ansätze: Paleo, Keto und vegane Ernährung. Jeder dieser Stile hat seine Vorzüge, doch welcher eignet sich für welches Ziel? Dieser Artikel vergleicht die drei Trends anhand aktueller Studien, beleuchtet potenzielle Mangelerscheinungen und zeigt auf, warum individuelle Bedürfnisse den Ausschlag geben.
+
+1. Paleo-Ernährung: Natürlichkeit im Fokus
+Prinzip
+Die Paleo-Diät orientiert sich an der vermuteten Ernährung der Jäger und Sammler: frisches Obst, Gemüse, Fleisch, Fisch, Eier, Nüsse und natürliche Fette. Verarbeitete Lebensmittel, Getreide und Hülsenfrüchte sind tabu.
+
+Vorteile
+Hochwertige Proteine: Fleisch und Fisch liefern essentielle Aminosäuren für Muskelaufbau und Regeneration.
+
+Verzicht auf Zusatzstoffe: Natürliche Zutaten reduzieren die Aufnahme von Zucker, Konservierungsstoffen und Transfetten.
+
+Stabile Energie: Der Verzicht auf raffinierte Kohlenhydrate minimiert Blutzuckerspitzen.
+
+Nachteile & Mangelrisiken
+Ballaststofflücke: Ohne Getreide und Hülsenfrüchte kann die Ballaststoffzufuhr kritisch sinken, was die Darmgesundheit beeinträchtigt.
+
+Kalziummangel: Der Verzicht auf Milchprodukte erfordert alternative Quellen wie Grünkohl oder Mandeln.
+
+Praktische Umsetzung: Hochwertiges Fleisch und Wildfisch sind kostspielig und zeitintensiv in der Zubereitung.
+
+Zielgruppe: Aktive Menschen, die natürliche Lebensmittel schätzen und kurzfristige Energieschwankungen vermeiden möchten.
+
+2. Keto-Diät: Fettstoffwechsel aktivieren
+Prinzip
+Die ketogene Ernährung reduziert Kohlenhydrate radikal (<5 % der Kalorien) und setzt auf Fett (70–80 %) sowie mäßig Protein. Ziel ist die Ketose, ein Zustand, in dem der Körper Fett statt Glukose verbrennt.
+
+Vorteile
+Schnelle Gewichtsabnahme: Die Umstellung auf Fettverbrennung kann kurzfristig effektiv sein.
+
+Therapeutisches Potenzial: Erfolgreich eingesetzt bei Epilepsie und zur Stabilisierung des Blutzuckerspiegels.
+
+Appetitkontrolle: Ketose kann Heißhunger reduzieren.
+
+Nachteile & Mangelrisiken
+Nährstoffdefizite: Einseitige Fettquellen können zu Vitaminmangel (z. B. Vitamin C, B-Vitamine) und Ballaststoffmangel führen.
+
+Eingeschränkte Ausdauerleistung: Kohlenhydratarme Ernährung kann die Leistungsfähigkeit bei intensivem Sport mindern.
+
+Soziale Hürden: Strikte Regeln erschweren das Essen im Alltag oder in Gesellschaft.
+
+Zielgruppe: Kurzfristige Gewichtsziele oder medizinisch begründete Anwendungen (z. B. Epilepsie).
+
+3. Vegane Ernährung: Pflanzenbasierte Vielfalt
+Prinzip
+Veganer:innen verzichten auf alle tierischen Produkte. Die Ernährung basiert auf Obst, Gemüse, Hülsenfrüchten, Nüssen und pflanzlichen Alternativen.
+
+Vorteile
+Prävention chronischer Krankheiten: Ballaststoffreiche Kost senkt das Risiko für Diabetes Typ 2 und bestimmte Krebsarten.
+
+Ethik & Tierwohl: Verzicht auf Massentierhaltung und tierische Produkte.
+
+Flexible Alternativen: Vegetarische oder pescetarische Varianten bieten mehr Spielraum für Nährstoffquellen (z. B. Fisch für Omega-3, Milchprodukte für B12).
+
+Nachteile & Mangelrisiken
+Kritische Nährstoffe: Vitamin B12 muss supplementiert werden. Eisen, Zink und Kalzium erfordern gezielte Planung (z. B. angereicherte Lebensmittel, Algen).
+
+Risiko für Risikogruppen: Schwangere, Kinder und Ältere benötigen professionelle Begleitung, um Entwicklungsstörungen zu vermeiden.
+
+Überverarbeitete Alternativen: Vegane Ersatzprodukte können stark verarbeitet sein – ein Fokus auf Vollwertkost ist essenziell.
+
+Zielgruppe: Langfristige Gesundheitsoptimierung oder ethisch motivierte Personen.
+
+Vergleichstabelle: Paleo vs. Keto vs. Vegan
+Kriterium	Paleo	Keto	Vegan
+Fokus	Natürliche Lebensmittel	Fettstoffwechsel	Pflanzliche Ernährung
+Vorteile	Muskelfreundlich, stabiler Blutzucker	Schnelle Gewichtsabnahme	Krankheitsprävention, Tierethik
+Risiken	Ballaststoff-/Kalziummangel	Nährstoffdefizite, soziale Einschränkungen	B12-/Eisenmangel
+Empfohlen für	Sportler:innen, Unverträglichkeiten	Kurzfristige Ziele, medizinische Indikationen	Ethische/gesundheitliche Langzeitziele
+Fazit: Ernährung muss zum Lebensstil passen
+Ob Paleo, Keto oder vegan – jede Ernährungsform hat ihre Stärken:
+
+Paleo eignet sich für naturbewusste Menschen mit Fokus auf Fitness.
+
+Keto kann kurzfristige Erfolge liefern, ist aber langfristig schwer durchzuhalten.
+
+Vegan überzeugt präventiv und ethisch, erfordert jedoch Disziplin bei der Nährstoffversorgung.
+
+Für viele Menschen bieten Flexibilität und Mischformen (z. B. vegetarisch oder pescetarisch) eine praktikable Lösung, um Nährstofflücken zu schließen und dennoch ethische oder gesundheitliche Ziele zu verfolgen. Letztlich gilt: Hochwertige Zutaten – ob pflanzlich oder tierisch – und eine bewusste Auswahl machen den Unterschied.`
+    };
+
+    // Formatierungsfunktion: Trennt Absätze anhand von doppelten Zeilenumbrüchen.
+    function formatContent(text) {
+      return text
+        .split(/(?:\r?\n){2,}/)
+        .map(paragraph => {
+          const formatted = paragraph
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            .replace(/\r?\n/g, '<br>');
+          return `<p>${formatted}</p>`;
+        })
+        .join('');
+    }
+
+    // Initialisierung der Seite (Content, Titel, Bild)
+    document.getElementById('articleTitle').textContent = articleData.title;
+    document.getElementById('articleContent').innerHTML = formatContent(articleData.content);
+    document.getElementById('articleImage').src = `../../${articleData.image}`;
+    document.getElementById('articleImage').alt = `Bild zu ${articleData.title}`;
+  </script>
+  <script>
+    document.write('<script src="http://' + (location.host || "localhost").split(":")[0] +
+    ':35729/livereload.js?snipver=1"></' + 'script>');
+  </script>
+</body>
+</html>

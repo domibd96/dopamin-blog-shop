@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-Shirt "STIMULATE" - DailyDopamin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header>
+    <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">DailyDopamin</div>
+    <nav>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html">Home</a>
+          <button class="invisible-click-area" aria-label="Zur Startseite" onclick="window.location.href='index.html'"></button>
+        </li>
+        <li>
+          <a href="#blog">Blog</a>
+          <button class="invisible-click-area" aria-label="Zum Blog" onclick="window.location.href='#blog'"></button>
+        </li>
+        <li>
+          <a href="ueber.html">Über</a>
+          <button class="invisible-click-area" aria-label="Zur Über-Seite" onclick="window.location.href='ueber.html'"></button>
+        </li>
+        <li>
+          <a href="kontakt.html">Kontakt</a>
+          <button class="invisible-click-area" aria-label="Zur Kontakt-Seite" onclick="window.location.href='kontakt.html'"></button>
+        </li>
+        <li>
+          <button class="cart-icon-btn" aria-label="Warenkorb öffnen" onclick="openCartModal()">
+            <span class="icon">🛒</span>
+            <span class="cart-count">0</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="product-main">
+    <div class="product-container">
+      <!-- Product Images Section -->
+      <div class="product-images">
+        <div class="main-image-container">
+          <img id="mainImage" src="img/shop/stimulate1.jpg" alt="T-Shirt STIMULATE" class="main-image">
+          <div class="image-overlay">
+            <button class="nav-btn prev-btn" onclick="changeImage(-1)">‹</button>
+            <button class="nav-btn next-btn" onclick="changeImage(1)">›</button>
+          </div>
+        </div>
+        <div class="thumbnail-container" id="thumbnailContainer">
+          <img src="img/shop/stimulate1.jpg" alt="STIMULATE T-Shirt - Bild 1" class="thumbnail active" onclick="selectImage(0)">
+          <img src="img/shop/stimulate2.jpg" alt="STIMULATE T-Shirt - Bild 2" class="thumbnail" onclick="selectImage(1)">
+          <img src="img/shop/stimulate3.jpg" alt="STIMULATE T-Shirt - Bild 3" class="thumbnail" onclick="selectImage(2)">
+          <img src="img/shop/stimulate4.jpg" alt="STIMULATE T-Shirt - Bild 4" class="thumbnail" onclick="selectImage(3)">
+        </div>
+      </div>
+
+      <!-- Product Info Section -->
+      <div class="product-info">
+        <h1 class="product-title" id="productTitle">T-Shirt "STIMULATE"</h1>
+        <div class="product-price" id="productPrice">€29.99</div>
+        
+        <div class="product-description" id="productDescription">
+          Psychedelic Techno Festival T-Shirt mit trippy Kunstdruck. Für echte Raver und alle, die die Underground-Kultur lieben. Das STIMULATE Design ist ein Statement für die Techno-Szene.
+        </div>
+
+        <div class="product-actions">
+          <div class="size-selector">
+            <label for="size">Größe:</label>
+            <div class="size-controls">
+              <button class="size-btn" data-size="XS">XS</button>
+              <button class="size-btn" data-size="S">S</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+              <button class="size-btn" data-size="XXL">XXL</button>
+            </div>
+          </div>
+          
+          <div class="quantity-selector">
+            <label for="quantity">Menge:</label>
+            <div class="quantity-controls">
+              <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+              <input type="number" id="quantity" value="1" min="1" max="10">
+              <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+            </div>
+          </div>
+          
+          <button class="add-to-cart-btn" onclick="addToCart()">
+            In den Warenkorb
+          </button>
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details">
+          <div class="detail-section">
+            <h3>Produktbeschreibung</h3>
+            <div id="productDetails">
+              Das "STIMULATE" T-Shirt ist ein Statement für alle Techno-Liebhaber. Mit psychedelischem Kunstdruck und trippy Design bringt es die Energie der Underground-Szene auf die Straße. Perfekt für Festivals, Raves und alle, die ihre Leidenschaft für elektronische Musik zeigen wollen.
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Pflegehinweise</h3>
+            <div id="careInstructions">
+              Maschinenwäsche bei 30°C, nicht bleichen, bei niedriger Temperatur bügeln, nicht chemisch reinigen. Am besten auf links waschen, um das Design zu schonen. Nicht im Trockner trocknen, sondern an der Luft trocknen lassen.
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Größen & Material</h3>
+            <div class="size-info">
+              <p><strong>Verfügbare Größen:</strong> XS, S, M, L, XL, XXL</p>
+              <p><strong>Material:</strong> 100% Bio-Baumwolle</p>
+              <p><strong>Gewicht:</strong> 180g/m²</p>
+              <p><strong>Passform:</strong> Regular Fit</p>
+              <p><strong>Halsausschnitt:</strong> Rundhals</p>
+              <p><strong>Ärmel:</strong> Kurzarm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-modal-content">
+      <div class="cart-modal-header">
+        <h2 class="cart-modal-title">Warenkorb</h2>
+        <button class="close-cart-btn" onclick="closeCartModal()">&times;</button>
+      </div>
+      
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items werden hier dynamisch eingefügt -->
+      </div>
+      
+      <div class="cart-total-section">
+        <div class="cart-total-row">
+          <span>Zwischensumme:</span>
+          <span id="cartSubtotal">€0.00</span>
+        </div>
+        <div class="cart-total-row">
+          <span>Versand:</span>
+          <span>€4.99</span>
+        </div>
+        <div class="cart-total-row cart-total-final">
+          <span>Gesamt:</span>
+          <span id="cartTotal">€0.00</span>
+        </div>
+      </div>
+      
+      <button class="paypal-checkout-btn" onclick="processPayPalCheckout()">
+        Mit PayPal bezahlen
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 MyJourneyNotes. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script>
+    // Produkt-spezifische Daten
+    const productData = {
+      id: 3,
+      name: 'T-Shirt "STIMULATE"',
+      price: 29.99,
+      description: 'Psychedelic Techno Festival T-Shirt mit trippy Kunstdruck',
+      images: [
+        'img/shop/stimulate1.jpg',
+        'img/shop/stimulate2.jpg', 
+        'img/shop/stimulate3.jpg',
+        'img/shop/stimulate4.jpg'
+      ]
+    };
+
+    // Bildumschaltung - KOMPLETT NEU UND FUNKTIONSFÄHIG
+    let currentImageIndex = 0;
+    
+    // Globale Funktionen für Event-Handler
+    window.changeImage = function(direction) {
+      console.log('changeImage called with direction:', direction);
+      
+      currentImageIndex += direction;
+      
+      // Grenzwerte prüfen und umschlagen
+      if (currentImageIndex < 0) {
+        currentImageIndex = productData.images.length - 1;
+      }
+      if (currentImageIndex >= productData.images.length) {
+        currentImageIndex = 0;
+      }
+      
+      updateImageDisplay();
+    };
+    
+    window.selectImage = function(index) {
+      console.log('selectImage called with index:', index);
+      currentImageIndex = index;
+      updateImageDisplay();
+    };
+    
+    function updateImageDisplay() {
+      console.log('updateImageDisplay called, currentImageIndex:', currentImageIndex);
+      
+      const mainImage = document.getElementById('mainImage');
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      
+      // Hauptbild aktualisieren
+      if (mainImage && productData.images[currentImageIndex]) {
+        mainImage.src = productData.images[currentImageIndex];
+        console.log('Updated main image to:', productData.images[currentImageIndex]);
+      }
+      
+      // Aktive Klasse für Thumbnails aktualisieren
+      thumbnails.forEach((thumb, i) => {
+        if (i === currentImageIndex) {
+          thumb.classList.add('active');
+        } else {
+          thumb.classList.remove('active');
+        }
+      });
+    }
+
+    let currentProduct = productData;
+    let cartCache = null;
+    let selectedSize = '';
+
+    // Warenkorb aus localStorage laden
+    function loadCart() {
+      if (cartCache !== null) {
+        return cartCache;
+      }
+      const stored = localStorage.getItem('cart');
+      const cart = stored ? JSON.parse(stored) : [];
+      cartCache = cart;
+      return cart;
+    }
+
+    // Warenkorb in localStorage speichern
+    function saveCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      cartCache = cart;
+    }
+
+    // Warenkorb-Anzeige aktualisieren
+    function updateCartDisplay() {
+      const cart = loadCart();
+      const cartCount = document.querySelector('.cart-count');
+      if (cartCount) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalItems;
+      }
+    }
+
+    // Cart Modal Functions
+    function openCartModal() {
+      const modal = document.getElementById('cartModal');
+      if (modal) {
+        modal.classList.add('active');
+        updateCartModal();
+      }
+    }
+
+    function closeCartModal() {
+      const modal = document.getElementById('cartModal');
+      if (modal) {
+        modal.classList.remove('active');
+      }
+    }
+
+    function updateCartModal() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItems = document.getElementById('cartItems');
+      const cartSubtotal = document.getElementById('cartSubtotal');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p style="text-align: center; color: #cccccc; margin: 40px 0;">Dein Warenkorb ist leer</p>';
+        cartSubtotal.textContent = '€0.00';
+        cartTotal.textContent = '€4.99';
+        return;
+      }
+      
+      cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-size">Größe: ${item.size}</div>
+            <div class="cart-item-price">€${item.price.toFixed(2)}</div>
+          </div>
+          <div class="cart-item-quantity">
+            <button class="quantity-btn" onclick="changeCartQuantity(${item.id}, '${item.size}', -1)">-</button>
+            <span>${item.quantity}</span>
+            <button class="quantity-btn" onclick="changeCartQuantity(${item.id}, '${item.size}', 1)">+</button>
+          </div>
+        </div>
+      `).join('');
+      
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      cartSubtotal.textContent = `€${subtotal.toFixed(2)}`;
+      cartTotal.textContent = `€${(subtotal + 4.99).toFixed(2)}`;
+    }
+
+    function changeCartQuantity(productId, size, change) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const item = cart.find(item => item.id === productId && item.size === size);
+      if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+          cart = cart.filter(item => !(item.id === productId && item.size === size));
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+        updateCartModal();
+      }
+    }
+
+    function processPayPalCheckout() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) {
+        alert('Dein Warenkorb ist leer!');
+        return;
+      }
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + 4.99;
+      
+      const itemName = encodeURIComponent('DailyDopamin Bestellung');
+      const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dominik.trausmuth@gmail.com&item_name=${itemName}&amount=${total.toFixed(2)}&currency_code=EUR&no_shipping=1`;
+      
+      const newWindow = window.open(paypalUrl, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+      if (newWindow) {
+        newWindow.focus();
+      }
+      
+      closeCartModal();
+      alert('PayPal wird geöffnet...');
+      
+      setTimeout(() => {
+        localStorage.setItem('cart', JSON.stringify([]));
+        updateCartDisplay();
+      }, 1500);
+    }
+
+    // Zum Warenkorb hinzufügen
+    function addToCart() {
+      if (!selectedSize) {
+        alert('Bitte wähle eine Größe aus.');
+        return;
+      }
+      
+      const quantity = parseInt(document.getElementById('quantity').value);
+      let cart = loadCart();
+      
+      const product = {
+        id: productData.id,
+        name: productData.name,
+        price: productData.price,
+        size: selectedSize,
+        quantity: quantity,
+        image: productData.images[0]
+      };
+      
+      // Prüfen ob Produkt bereits im Warenkorb ist
+      const existingItem = cart.find(item => item.id === product.id && item.size === product.size);
+      if (existingItem) {
+        existingItem.quantity += product.quantity;
+      } else {
+        cart.push(product);
+      }
+      
+      // Warenkorb speichern
+      saveCart(cart);
+      updateCartDisplay();
+      
+      // Benachrichtigung anzeigen
+      showNotification(`${quantity}x ${product.name} (${product.size}) zum Warenkorb hinzugefügt!`);
+      
+      // Menge zurücksetzen
+      document.getElementById('quantity').value = 1;
+    }
+
+    // Menge ändern
+    function changeQuantity(change) {
+      const quantityInput = document.getElementById('quantity');
+      let newQuantity = parseInt(quantityInput.value) + change;
+      
+      // Grenzen einhalten
+      newQuantity = Math.max(1, Math.min(10, newQuantity));
+      
+      quantityInput.value = newQuantity;
+    }
+
+    // Benachrichtigung anzeigen
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.textContent = message;
+      notification.style.cssText = `
+        position: fixed;
+        top: 120px;
+        right: 20px;
+        background: linear-gradient(135deg, #4A90E2, #6BB6FF);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 25px;
+        z-index: 10001;
+        font-weight: 600;
+        box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+        animation: slideIn 0.3s ease;
+      `;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+      }, 3000);
+    }
+
+    // Aktualisiere Produktdaten beim Laden
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded, initializing page...');
+      
+      document.getElementById('productTitle').textContent = productData.name;
+      document.getElementById('productPrice').textContent = `€${productData.price.toFixed(2)}`;
+      document.title = `${productData.name} - DailyDopamin`;
+      updateCartDisplay();
+      
+      // Size selection logic
+      document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+          this.classList.add('selected');
+          selectedSize = this.dataset.size;
+        });
+      });
+      
+      // Bildanzeige initialisieren - WICHTIG für korrekte Funktionalität
+      setTimeout(function() {
+        updateImageDisplay();
+        console.log('Image display initialized');
+      }, 100);
+      
+      // Tastatur-Navigation hinzufügen
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          changeImage(-1);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          changeImage(1);
+        }
+      });
+    });
+
+    // CSS für Animationen und Styling hinzufügen
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+      }
+
+      /* Size Selection Styling */
+      .size-controls {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+
+      .size-btn {
+        background: rgba(74, 144, 226, 0.1);
+                  color: #4A90E2;
+        border: 2px solid rgba(74, 144, 226, 0.3);
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        min-width: 45px;
+        text-align: center;
+      }
+
+      .size-btn:hover {
+        background: rgba(74, 144, 226, 0.2);
+        border-color: rgba(74, 144, 226, 0.5);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+      }
+
+      .size-btn.selected {
+        background: #4A90E2;
+        color: white;
+        border-color: #4A90E2;
+        transform: translateY(-2px);
+                  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+      }
+
+      .size-btn.selected:hover {
+        background: #e5458a;
+        border-color: #e5458a;
+      }
+
+
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html> 

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dopamin7</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">DailyDopamin</div>
+<nav>
+  <ul class="nav-links">
+    <li>
+      <button class="invisible-click-area" aria-label="Zur Startseite" onclick="window.location.href='index.html'"></button>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <button class="invisible-click-area" aria-label="Zum Blog" onclick="window.location.href='#blog'"></button>
+      <a href="#blog">Blog</a>
+    </li>
+    <li>
+      <button class="invisible-click-area" aria-label="Zur Über-Seite" onclick="window.location.href='ueber.html'"></button>
+      <a href="ueber.html">Über</a>
+    </li>
+    <li>
+      <button class="invisible-click-area" aria-label="Zur Kontakt-Seite" onclick="window.location.href='kontakt.html'"></button>
+      <a href="kontakt.html">Kontakt</a>
+    </li>
+  </ul>
+</nav>
+  </header>
+
+  <!-- Slideshow -->
+  <section class="slideshow">
+    <div class="slides">
+      <div class="slide active" style="background-image: url('img/sport.png');" aria-label="Sportliche Aktivität">
+        <div class="slide-content">
+          <h2>Sport & Fitness</h2>
+          <p>Entdecke dein Potenzial durch Bewegung</p>
+          <button class="slide-btn" onclick="window.location.href='sport.html'">Mehr erfahren</button>
+        </div>
+        <button class="invisible-click-area" aria-label="Mehr zum Sport"></button>
+      </div>
+      <div class="slide" style="background-image: url('img/health.png');" aria-label="Gesundheit und Wohlbefinden">
+        <div class="slide-content">
+          <h2>Gesundheit & Wellness</h2>
+          <p>Ganzheitliche Gesundheit für Körper und Geist</p>
+          <button class="slide-btn" onclick="window.location.href='gesundheit.html'">Mehr erfahren</button>
+        </div>
+        <button class="invisible-click-area" aria-label="Mehr zur Gesundheit"></button>
+      </div>
+      <div class="slide" style="background-image: url('img/food.png');" aria-label="Ernährung und gesunde Lebensmittel">
+        <div class="slide-content">
+          <h2>Ernährung & Lifestyle</h2>
+          <p>Gesunde Ernährung für ein besseres Leben</p>
+          <button class="slide-btn" onclick="window.location.href='ernaehrung.html'">Mehr erfahren</button>
+        </div>
+        <button class="invisible-click-area" aria-label="Mehr zur Ernährung"></button>
+      </div>
+      <div class="slide" style="background-image: url('img/slide4.png');" aria-label="Kultur und Gesellschaft">
+        <div class="slide-content">
+          <h2>Kultur & Gesellschaft</h2>
+          <p>Aktuelle Themen und kulturelle Entwicklungen</p>
+          <button class="slide-btn" onclick="window.location.href='kultur.html'">Mehr erfahren</button>
+        </div>
+        <button class="invisible-click-area" aria-label="Mehr zur Kultur"></button>
+      </div>
+      <div class="slide" style="background-image: url('img/slide5.png');" aria-label="Kunst und Kreativität">
+        <div class="slide-content">
+          <h2>Kunst & Kreativität</h2>
+          <p>Inspiration für kreatives Design und Denken</p>
+          <button class="slide-btn" onclick="window.location.href='kunst.html'">Mehr erfahren</button>
+        </div>
+        <button class="invisible-click-area" aria-label="Mehr zur Kunst"></button>
+      </div>
+    </div>
+    <div class="dots-container"></div>
+  </section>
+
+  <section class="categories">
+    <article class="category-card" style="background-image: url('img/bild1.png');">
+      <h2>Ernährung</h2>
+      <p>Tipps, Rezepte und Infos für eine ausgewogene Ernährung.</p>
+      <button class="invisible-click-area" aria-label="Zu Ernährung"></button>
+    </article>
+    <article class="category-card" style="background-image: url('img/bild2.png');">
+      <h2>Sport</h2>
+      <p>Workouts, Motivation und Trainingstipps.</p>
+      <button class="invisible-click-area" aria-label="Zu Sport"></button>
+    </article>
+    <article class="category-card" style="background-image: url('img/bild3.png');">
+      <h2>Gesundheit</h2>
+      <p>Ganzheitliche Gesundheit für Körper und Geist.</p>
+      <button class="invisible-click-area" aria-label="Zu Gesundheit"></button>
+    </article>
+    <article class="category-card" style="background-image: url('img/bild4.png');">
+      <h2>Kultur</h2>
+      <p>Aktuelle Themen und Meinungen zu kulturellen Entwicklungen.</p>
+      <button class="invisible-click-area" aria-label="Zu Kultur"></button>
+    </article>
+    <article class="category-card" style="background-image: url('img/bild5.png');">
+      <h2>Kunst und Kreativität</h2>
+      <p>Inspiration für kreatives Design und kreatives Denken.</p>
+      <button class="invisible-click-area" aria-label="Zu Kunst"></button>
+    </article>
+    <article class="category-card" style="background-image: url('img/bild6.png');">
+      <h2>Shop</h2>
+      <p>Stylische T-Shirts und Taschen für deinen Lifestyle.</p>
+      <button class="invisible-click-area" aria-label="Zum Shop"></button>
+    </article>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MyJourneyNotes. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <!-- Externe JavaScript-Datei -->
+  <script src="js/main.js"></script>
+</body>
+</html>

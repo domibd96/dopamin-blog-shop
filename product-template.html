@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRODUCT_NAME - DailyDopamin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="product.css">
+</head>
+<body>
+  <header>
+    <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">DailyDopamin</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="ueber.html">Über</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="product-main">
+    <div class="product-container">
+      <!-- Product Images Section -->
+      <div class="product-images">
+        <div class="main-image-container">
+          <img id="mainImage" src="" alt="PRODUCT_NAME" class="main-image">
+          <div class="image-overlay">
+            <button class="nav-btn prev-btn" onclick="changeImage(-1)">‹</button>
+            <button class="nav-btn next-btn" onclick="changeImage(1)">›</button>
+          </div>
+        </div>
+        <div class="thumbnail-container" id="thumbnailContainer">
+          <!-- Thumbnails werden dynamisch eingefügt -->
+        </div>
+      </div>
+
+      <!-- Product Info Section -->
+      <div class="product-info">
+        <h1 class="product-title" id="productTitle">PRODUCT_NAME</h1>
+        <div class="product-price" id="productPrice">€29.99</div>
+        
+        <div class="product-description" id="productDescription">
+          <!-- Beschreibung wird dynamisch eingefügt -->
+        </div>
+
+        <div class="product-actions">
+          <div class="quantity-selector">
+            <label for="quantity">Menge:</label>
+            <div class="quantity-controls">
+              <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+              <input type="number" id="quantity" value="1" min="1" max="10">
+              <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+            </div>
+          </div>
+          
+          <button class="add-to-cart-btn" onclick="addToCart()">
+            In den Warenkorb
+          </button>
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details">
+          <div class="detail-section">
+            <h3>Produktbeschreibung</h3>
+            <div id="productDetails">
+              <!-- Details werden dynamisch eingefügt -->
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Pflegehinweise</h3>
+            <div id="careInstructions">
+              <!-- Pflegehinweise werden dynamisch eingefügt -->
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Größen & Material</h3>
+            <div class="size-info">
+              <p><strong>Verfügbare Größen:</strong> XS, S, M, L, XL, XXL</p>
+              <p><strong>Material:</strong> 100% Bio-Baumwolle</p>
+              <p><strong>Gewicht:</strong> 180g/m²</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyJourneyNotes. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html> 

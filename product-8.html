@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oversized T-Shirt "VACAY" - DailyDopamin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header>
+    <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">DailyDopamin</div>
+    <nav>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html">Home</a>
+          <button class="invisible-click-area" aria-label="Zur Startseite" onclick="window.location.href='index.html'"></button>
+        </li>
+        <li>
+          <a href="#blog">Blog</a>
+          <button class="invisible-click-area" aria-label="Zum Blog" onclick="window.location.href='#blog'"></button>
+        </li>
+        <li>
+          <a href="ueber.html">Über</a>
+          <button class="invisible-click-area" aria-label="Zur Über-Seite" onclick="window.location.href='ueber.html'"></button>
+        </li>
+        <li>
+          <a href="kontakt.html">Kontakt</a>
+          <button class="invisible-click-area" aria-label="Zur Kontakt-Seite" onclick="window.location.href='kontakt.html'"></button>
+        </li>
+        <li>
+          <button class="cart-icon-btn" aria-label="Warenkorb öffnen" onclick="openCartModal()">
+            <span class="icon">🛒</span>
+            <span class="cart-count">0</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="product-main">
+    <div class="product-container">
+      <!-- Product Images Section -->
+      <div class="product-images">
+        <div class="main-image-container">
+          <img id="mainImage" src="img/shop/vacay1.jpg" alt="Oversized T-Shirt VACAY" class="main-image">
+          <div class="image-overlay">
+            <button class="nav-btn prev-btn" onclick="changeImage(-1)">‹</button>
+            <button class="nav-btn next-btn" onclick="changeImage(1)">›</button>
+          </div>
+        </div>
+        <div class="thumbnail-container" id="thumbnailContainer">
+          <img src="img/shop/vacay1.jpg" alt="VACAY T-Shirt - Bild 1" class="thumbnail active" onclick="selectImage(0)">
+          <img src="img/shop/vacay2.jpg" alt="VACAY T-Shirt - Bild 2" class="thumbnail" onclick="selectImage(1)">
+          <img src="img/shop/vacay3.jpg" alt="VACAY T-Shirt - Bild 3" class="thumbnail" onclick="selectImage(2)">
+          <img src="img/shop/vacay4.jpg" alt="VACAY T-Shirt - Bild 4" class="thumbnail" onclick="selectImage(3)">
+        </div>
+      </div>
+
+      <!-- Product Info Section -->
+      <div class="product-info">
+        <div class="product-details">
+          <h1>Oversized T-Shirt "VACAY"</h1>
+          <p class="price">€29,99</p>
+          <p class="description">Urlaubs-Design mit entspannter Atmosphäre. Vacation-Mode aktiviert.</p>
+          
+          <div class="size-selection">
+            <h3>Größe wählen:</h3>
+            <div class="size-options">
+              <button class="size-btn" data-size="XS">XS</button>
+              <button class="size-btn" data-size="S">S</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+              <button class="size-btn" data-size="XXL">XXL</button>
+            </div>
+          </div>
+
+          <div class="quantity-selection">
+            <h3>Menge:</h3>
+            <div class="quantity-controls">
+              <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+              <span id="quantity">1</span>
+              <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+            </div>
+          </div>
+
+          <button class="add-to-cart-btn" onclick="addToCart()">
+            In den Warenkorb
+          </button>
+
+          <div class="product-description">
+            <h3>Produktbeschreibung</h3>
+            <p>Das "VACAY" T-Shirt bringt Urlaubsstimmung in den Alltag. Für alle, die vom nächsten Trip träumen.</p>
+            
+            <h4>Eigenschaften:</h4>
+            <ul>
+              <li>100% Bio-Baumwolle</li>
+              <li>Oversized Schnitt</li>
+              <li>Hochwertige Siebdruckveredelung</li>
+              <li>Atmungsaktiv und bequem</li>
+              <li>Nachhaltig produziert</li>
+            </ul>
+
+            <h4>Pflegehinweise:</h4>
+            <p>Maschinenwäsche bei 30°C, nicht bleichen, bei niedriger Temperatur bügeln, nicht chemisch reinigen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-modal-content">
+      <div class="cart-modal-header">
+        <h2 class="cart-modal-title">Warenkorb</h2>
+        <button class="close-cart-btn" onclick="closeCartModal()">&times;</button>
+      </div>
+      
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items werden hier dynamisch eingefügt -->
+      </div>
+      
+      <div class="cart-total-section">
+        <div class="cart-total-row">
+          <span>Zwischensumme:</span>
+          <span id="cartSubtotal">€0.00</span>
+        </div>
+        <div class="cart-total-row">
+          <span>Versand:</span>
+          <span>€4.99</span>
+        </div>
+        <div class="cart-total-row cart-total-final">
+          <span>Gesamt:</span>
+          <span id="cartTotal">€0.00</span>
+        </div>
+      </div>
+      
+      <button class="paypal-checkout-btn" onclick="processPayPalCheckout()">
+        Mit PayPal bezahlen
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      'img/shop/vacay1.jpg',
+      'img/shop/vacay2.jpg',
+      'img/shop/vacay3.jpg',
+      'img/shop/vacay4.jpg'
+    ];
+
+    let currentImageIndex = 0;
+    let selectedSize = '';
+    let quantity = 1;
+
+    // Size selection logic
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+          this.classList.add('selected');
+          selectedSize = this.dataset.size;
+        });
+      });
+    });
+
+    // Global functions for navigation
+    window.changeImage = function(direction) {
+      currentImageIndex += direction;
+      if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+      } else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+      }
+      
+      const mainImage = document.getElementById('mainImage');
+      mainImage.src = images[currentImageIndex];
+      
+      // Update thumbnail active state
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentImageIndex);
+      });
+    };
+
+    window.selectImage = function(index) {
+      currentImageIndex = index;
+      const mainImage = document.getElementById('mainImage');
+      mainImage.src = images[index];
+      
+      // Update thumbnail active state
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      thumbnails.forEach((thumb, idx) => {
+        thumb.classList.toggle('active', idx === index);
+      });
+    };
+
+    // Quantity functions
+    function increaseQuantity() {
+      quantity++;
+      document.getElementById('quantity').textContent = quantity;
+    }
+
+    function decreaseQuantity() {
+      if (quantity > 1) {
+        quantity--;
+        document.getElementById('quantity').textContent = quantity;
+      }
+    }
+
+    // Add to cart function
+    function addToCart() {
+      if (!selectedSize) {
+        alert('Bitte wähle eine Größe aus.');
+        return;
+      }
+
+      const product = {
+        id: 8,
+        name: 'Oversized T-Shirt "VACAY"',
+        price: 29.99,
+        size: selectedSize,
+        quantity: quantity,
+        image: 'img/shop/vacay1.jpg'
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      const existingItem = cart.find(item => 
+        item.id === product.id && item.size === product.size
+      );
+
+      if (existingItem) {
+        existingItem.quantity += product.quantity;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      
+      // Update cart count
+      updateCartCount();
+      
+      // Show success message
+      alert(`${product.quantity}x ${product.name} (Größe ${product.size}) wurde zum Warenkorb hinzugefügt!`);
+    }
+
+    // Load cart functions from main.js
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.querySelector('.cart-count').textContent = totalItems;
+    }
+
+    function openCartModal() {
+      const modal = document.getElementById('cartModal');
+      if (modal) {
+        modal.classList.add('active');
+        updateCartModal();
+      }
+    }
+
+    function closeCartModal() {
+      const modal = document.getElementById('cartModal');
+      if (modal) {
+        modal.classList.remove('active');
+      }
+    }
+
+    function updateCartModal() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItems = document.getElementById('cartItems');
+      const cartSubtotal = document.getElementById('cartSubtotal');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p style="text-align: center; color: #cccccc;">Dein Warenkorb ist leer</p>';
+        cartSubtotal.textContent = '€0.00';
+        cartTotal.textContent = '€4.99';
+        return;
+      }
+      
+      cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">€${item.price.toFixed(2)}</div>
+          </div>
+          <div class="cart-item-quantity">
+            <button class="quantity-btn" onclick="changeCartQuantity(${item.id}, -1)">-</button>
+            <span>${item.quantity}</span>
+            <button class="quantity-btn" onclick="changeCartQuantity(${item.id}, 1)">+</button>
+          </div>
+        </div>
+      `).join('');
+      
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      cartSubtotal.textContent = `€${subtotal.toFixed(2)}`;
+      cartTotal.textContent = `€${(subtotal + 4.99).toFixed(2)}`;
+    }
+
+    function changeCartQuantity(productId, change) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const item = cart.find(item => item.id === productId);
+      if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+          cart = cart.filter(item => item.id !== productId);
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        updateCartModal();
+      }
+    }
+
+    function processPayPalCheckout() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) {
+        alert('Dein Warenkorb ist leer!');
+        return;
+      }
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + 4.99;
+      
+      const itemName = encodeURIComponent('DailyDopamin Bestellung');
+      const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dominik.trausmuth@gmail.com&item_name=${itemName}&amount=${total.toFixed(2)}&currency_code=EUR&no_shipping=1`;
+      
+      const newWindow = window.open(paypalUrl, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+      if (newWindow) {
+        newWindow.focus();
+      }
+      
+      closeCartModal();
+      alert('PayPal wird geöffnet...');
+      
+      setTimeout(() => {
+        localStorage.setItem('cart', JSON.stringify([]));
+        updateCartCount();
+      }, 1500);
+    }
+
+    // Initialize
+    updateCartCount();
+  </script>
+
+  <style>
+  /* Size Selection Styling */
+  .size-selection {
+    margin: 20px 0;
+  }
+
+  .size-selection h3 {
+    color: #4A90E2;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .size-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .size-btn {
+    background: rgba(74, 144, 226, 0.1);
+    color: #4A90E2;
+    border: 2px solid rgba(74, 144, 226, 0.3);
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 50px;
+  }
+
+  .size-btn:hover {
+    background: rgba(74, 144, 226, 0.2);
+    border-color: rgba(74, 144, 226, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+  }
+
+  .size-btn.selected {
+    background: #4A90E2;
+    color: white;
+    border-color: #4A90E2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+  }
+  </style>
+</body>
+</html> 

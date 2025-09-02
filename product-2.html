@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oversized T-Shirt "AMALFI" - DailyDopamin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header>
+    <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">DailyDopamin</div>
+    <nav>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html">Home</a>
+          <button class="invisible-click-area" aria-label="Zur Startseite" onclick="window.location.href='index.html'"></button>
+        </li>
+        <li>
+          <a href="#blog">Blog</a>
+          <button class="invisible-click-area" aria-label="Zum Blog" onclick="window.location.href='#blog'"></button>
+        </li>
+        <li>
+          <a href="ueber.html">Über</a>
+          <button class="invisible-click-area" aria-label="Zur Über-Seite" onclick="window.location.href='ueber.html'"></button>
+        </li>
+        <li>
+          <a href="kontakt.html">Kontakt</a>
+          <button class="invisible-click-area" aria-label="Zur Kontakt-Seite" onclick="window.location.href='kontakt.html'"></button>
+        </li>
+        <li>
+          <button class="cart-icon-btn" aria-label="Warenkorb öffnen" onclick="openCartModal()">
+            <span class="icon">🛒</span>
+            <span class="cart-count">0</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="product-main">
+    <div class="product-container">
+      <!-- Product Images Section -->
+      <div class="product-images">
+        <div class="main-image-container">
+          <img id="mainImage" src="img/shop/amalfi1.jpg" alt="Oversized T-Shirt AMALFI" class="main-image">
+          <div class="image-overlay">
+            <button class="nav-btn prev-btn" onclick="changeImage(-1)">‹</button>
+            <button class="nav-btn next-btn" onclick="changeImage(1)">›</button>
+          </div>
+        </div>
+        <div class="thumbnail-container" id="thumbnailContainer">
+          <img src="img/shop/amalfi1.jpg" alt="AMALFI T-Shirt - Bild 1" class="thumbnail active" onclick="selectImage(0)">
+          <img src="img/shop/amalfi2.jpg" alt="AMALFI T-Shirt - Bild 2" class="thumbnail" onclick="selectImage(1)">
+          <img src="img/shop/amalfi3.jpg" alt="AMALFI T-Shirt - Bild 3" class="thumbnail" onclick="selectImage(2)">
+          <img src="img/shop/amalfi4.jpg" alt="AMALFI T-Shirt - Bild 4" class="thumbnail" onclick="selectImage(3)">
+        </div>
+      </div>
+
+      <!-- Product Info Section -->
+      <div class="product-info">
+        <h1 class="product-title" id="productTitle">Oversized T-Shirt "AMALFI"</h1>
+        <div class="product-price" id="productPrice">€29.99</div>
+        
+        <div class="product-description" id="productDescription">
+          Sommerliches T-Shirt mit psychedelischem Design. Perfekt für Techno Festivals und entspannte Tage am Strand. Das AMALFI Design kombiniert mediterrane Vibes mit modernen Kunstdrucken.
+        </div>
+
+        <div class="product-actions">
+          <div class="size-selector">
+            <label for="size">Größe:</label>
+            <div class="size-controls">
+              <button class="size-btn" data-size="XS">XS</button>
+              <button class="size-btn" data-size="S">S</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+              <button class="size-btn" data-size="XXL">XXL</button>
+            </div>
+          </div>
+          
+          <div class="quantity-selector">
+            <label for="quantity">Menge:</label>
+            <div class="quantity-controls">
+              <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+              <input type="number" id="quantity" value="1" min="1" max="10">
+              <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+            </div>
+          </div>
+          
+          <button class="add-to-cart-btn" onclick="addToCart()">
+            In den Warenkorb
+          </button>
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details">
+          <div class="detail-section">
+            <h3>Produktbeschreibung</h3>
+            <div id="productDetails">
+              Dieses Oversized T-Shirt "AMALFI" verbindet sommerliche Vibes mit psychedelischen Kunstdrucken. Perfekt für Festivals und Raves, aber auch für entspannte Sommertage. Das einzigartige Design ist inspiriert von der italienischen Küste und modernen Festival-Kultur.
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Pflegehinweise</h3>
+            <div id="careInstructions">
+              Maschinenwäsche bei 30°C, nicht bleichen, bei niedriger Temperatur bügeln, nicht chemisch reinigen. Am besten auf links waschen, um das Design zu schonen. Nicht im Trockner trocknen, sondern an der Luft trocknen lassen.
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Größen & Material</h3>
+            <div class="size-info">
+              <p><strong>Verfügbare Größen:</strong> XS, S, M, L, XL, XXL</p>
+              <p><strong>Material:</strong> 100% Bio-Baumwolle</p>
+              <p><strong>Gewicht:</strong> 180g/m²</p>
+              <p><strong>Passform:</strong> Oversized (lässig fallend)</p>
+              <p><strong>Halsausschnitt:</strong> Rundhals</p>
+              <p><strong>Ärmel:</strong> Kurzarm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-modal-content">
+      <div class="cart-modal-header">
+        <h2 class="cart-modal-title">Warenkorb</h2>
+        <button class="close-cart-btn" onclick="closeCartModal()">&times;</button>
+      </div>
+      
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items werden hier dynamisch eingefügt -->
+      </div>
+      
+      <div class="cart-total-section">
+        <div class="cart-total-row">
+          <span>Zwischensumme:</span>
+          <span id="cartSubtotal">€0.00</span>
+        </div>
+        <div class="cart-total-row">
+          <span>Versand:</span>
+          <span>€4.99</span>
+        </div>
+        <div class="cart-total-row cart-total-final">
+          <span>Gesamt:</span>
+          <span id="cartTotal">€0.00</span>
+        </div>
+      </div>
+      
+      <button class="paypal-checkout-btn" onclick="processPayPalCheckout()">
+        Mit PayPal bezahlen
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 MyJourneyNotes. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script>
+    // Produkt-spezifische Daten
+    const productData = {
+      id: 2,
+      name: 'Oversized T-Shirt "AMALFI"',
+      price: 29.99,
+      description: 'Sommerliches T-Shirt mit psychedelischem Design',
+      images: [
+        'img/shop/amalfi1.jpg',
+        'img/shop/amalfi2.jpg', 
+        'img/shop/amalfi3.jpg',
+        'img/shop/amalfi4.jpg'
+      ]
+    };
+
+    // Bildumschaltung - KOMPLETT NEU UND FUNKTIONSFÄHIG
+    let currentImageIndex = 0;
+    
+    // Globale Funktionen für Event-Handler
+    window.changeImage = function(direction) {
+      console.log('changeImage called with direction:', direction);
+      
+      currentImageIndex += direction;
+      
+      // Grenzwerte prüfen und umschlagen
+      if (currentImageIndex < 0) {
+        currentImageIndex = productData.images.length - 1;
+      }
+      if (currentImageIndex >= productData.images.length) {
+        currentImageIndex = 0;
+      }
+      
+      updateImageDisplay();
+    };
+    
+    window.selectImage = function(index) {
+      console.log('selectImage called with index:', index);
+      currentImageIndex = index;
+      updateImageDisplay();
+    };
+    
+    function updateImageDisplay() {
+      console.log('updateImageDisplay called, currentImageIndex:', currentImageIndex);
+      
+      const mainImage = document.getElementById('mainImage');
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      
+      // Hauptbild aktualisieren
+      if (mainImage && productData.images[currentImageIndex]) {
+        mainImage.src = productData.images[currentImageIndex];
+        console.log('Updated main image to:', productData.images[currentImageIndex]);
+      }
+      
+      // Aktive Klasse für Thumbnails aktualisieren
+      thumbnails.forEach((thumb, i) => {
+        if (i === currentImageIndex) {
+          thumb.classList.add('active');
+        } else {
+          thumb.classList.remove('active');
+        }
+      });
+    }
+
+    let currentProduct = productData;
+    let cartCache = null;
+    let selectedSize = '';
+
+    // Warenkorb aus localStorage laden
+    function loadCart() {
+      if (cartCache !== null) {
+        return cartCache;
+      }
+      const stored = localStorage.getItem('cart');
+      const cart = stored ? JSON.parse(stored) : [];
+      cartCache = cart;
+      return cart;
+    }
+
+    // Warenkorb in localStorage speichern
+    function saveCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      cartCache = cart;
+    }
+
+    // Warenkorb-Anzeige aktualisieren
+    function updateCartDisplay() {
+      const cart = loadCart();
+      const cartCount = document.querySelector('.cart-count');
+      if (cartCount) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalItems;
+      }
+    }
+
+    // Zum Warenkorb hinzufügen
+    function addToCart() {
+      if (!currentProduct) return;
+      if (!selectedSize) {
+        alert('Bitte wähle eine Größe aus.');
+        return;
+      }
+      const quantity = parseInt(document.getElementById('quantity').value);
+      let cart = loadCart();
+      
+      // Prüfen ob Produkt bereits im Warenkorb ist (mit gleicher Größe)
+      const existingItem = cart.find(item => item.id === currentProduct.id && item.size === selectedSize);
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({
+          id: currentProduct.id,
+          name: currentProduct.name,
+          price: currentProduct.price,
+          quantity: quantity,
+          size: selectedSize
+        });
+      }
+      
+      // Warenkorb speichern
+      saveCart(cart);
+      updateCartDisplay();
+      
+      // Morphing cart icon
+      morphCartIcon();
+      
+      // Benachrichtigung anzeigen
+      showNotification(`${quantity}x ${currentProduct.name} zum Warenkorb hinzugefügt!`);
+      
+      // Menge zurücksetzen
+      document.getElementById('quantity').value = 1;
+    }
+
+    // Menge ändern
+    function changeQuantity(change) {
+      const quantityInput = document.getElementById('quantity');
+      let newQuantity = parseInt(quantityInput.value) + change;
+      
+      // Grenzen einhalten
+      newQuantity = Math.max(1, Math.min(10, newQuantity));
+      
+      quantityInput.value = newQuantity;
+    }
+
+    // Benachrichtigung anzeigen
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.textContent = message;
+      notification.style.cssText = `
+        position: fixed;
+        top: 120px;
+        right: 20px;
+        background: linear-gradient(135deg, #4A90E2, #6BB6FF);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 25px;
+        z-index: 10001;
+        font-weight: 600;
+        box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+        animation: slideIn 0.3s ease;
+      `;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+      }, 3000);
+    }
+
+    // Cart Modal öffnen/schließen
+    function openCartModal() {
+      const modal = document.getElementById('cartModal');
+      if (modal) {
+        modal.style.display = 'flex';
+        modal.style.opacity = '1';
+        updateCartModal();
+      }
+    }
+
+    function closeCartModal() {
+      const modal = document.getElementById('cartModal');
+      if (modal) {
+        modal.style.display = 'none';
+        modal.style.opacity = '0';
+      }
+    }
+
+    // Cart Modal aktualisieren
+    function updateCartModal() {
+      const cart = loadCart();
+      const cartItems = document.getElementById('cartItems');
+      const cartSubtotal = document.getElementById('cartSubtotal');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p style="text-align: center; color: #cccccc;">Dein Warenkorb ist leer</p>';
+        cartSubtotal.textContent = '€0.00';
+        cartTotal.textContent = '€4.99';
+        return;
+      }
+      
+      cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">€${item.price.toFixed(2)}</div>
+          </div>
+          <div class="cart-item-quantity">
+            <button class="quantity-btn" onclick="changeCartQuantity(${item.id}, -1)">-</button>
+            <span>${item.quantity}</span>
+            <button class="quantity-btn" onclick="changeCartQuantity(${item.id}, 1)">+</button>
+          </div>
+        </div>
+      `).join('');
+      
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      cartSubtotal.textContent = `€${subtotal.toFixed(2)}`;
+      cartTotal.textContent = `€${(subtotal + 4.99).toFixed(2)}`;
+    }
+
+    // Warenkorb-Menge ändern
+    function changeCartQuantity(productId, change) {
+      let cart = loadCart();
+      const item = cart.find(item => item.id === productId);
+      if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+          cart = cart.filter(item => item.id !== productId);
+        }
+        saveCart(cart);
+        updateCartDisplay();
+        updateCartModal();
+      }
+    }
+
+    // PayPal Checkout
+    function processPayPalCheckout() {
+      const cart = loadCart();
+      if (cart.length === 0) {
+        showNotification('Dein Warenkorb ist leer!');
+        return;
+      }
+      
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + 4.99;
+      const itemName = encodeURIComponent('DailyDopamin Bestellung');
+      const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dominik.trausmuth@gmail.com&item_name=${itemName}&amount=${total.toFixed(2)}&currency_code=EUR&no_shipping=1`;
+      
+      const paypalBtn = document.createElement('button');
+      paypalBtn.textContent = 'Zu PayPal bezahlen';
+      paypalBtn.style.cssText = `background: #0070BA; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; margin: 10px;`;
+      paypalBtn.onclick = () => {
+        const newWindow = window.open(paypalUrl, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+        if (newWindow) {
+          newWindow.focus();
+        }
+        closeCartModal();
+        showNotification('PayPal wird in neuem Fenster geöffnet...');
+      };
+      
+      document.getElementById('cartItems').innerHTML = '<p style="color:#4A90E2;">Klicke auf den Button:</p>';
+      document.getElementById('cartItems').appendChild(paypalBtn);
+    }
+
+    // Cart Modal Functions
+    function openCartModal() {
+      const modal = document.getElementById('cartModal');
+      if (modal) {
+        modal.classList.add('active');
+        updateCartModal();
+      }
+    }
+
+    function closeCartModal() {
+      const modal = document.getElementById('cartModal');
+      if (modal) {
+        modal.classList.remove('active');
+      }
+    }
+
+    function updateCartModal() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItems = document.getElementById('cartItems');
+      const cartSubtotal = document.getElementById('cartSubtotal');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p style="text-align: center; color: #cccccc; margin: 40px 0;">Dein Warenkorb ist leer</p>';
+        cartSubtotal.textContent = '€0.00';
+        cartTotal.textContent = '€4.99';
+        return;
+      }
+      
+      cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-size">Größe: ${item.size}</div>
+            <div class="cart-item-price">€${item.price.toFixed(2)}</div>
+          </div>
+          <div class="cart-item-quantity">
+            <button class="quantity-btn" onclick="changeCartQuantity(${item.id}, '${item.size}', -1)">-</button>
+            <span>${item.quantity}</span>
+            <button class="quantity-btn" onclick="changeCartQuantity(${item.id}, '${item.size}', 1)">+</button>
+          </div>
+        </div>
+      `).join('');
+      
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      cartSubtotal.textContent = `€${subtotal.toFixed(2)}`;
+      cartTotal.textContent = `€${(subtotal + 4.99).toFixed(2)}`;
+    }
+
+    function changeCartQuantity(productId, size, change) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const item = cart.find(item => item.id === productId && item.size === size);
+      if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+          cart = cart.filter(item => !(item.id === productId && item.size === size));
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+        updateCartModal();
+      }
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded, initializing page...');
+      
+      document.getElementById('productTitle').textContent = productData.name;
+      document.getElementById('productPrice').textContent = `€${productData.price.toFixed(2)}`;
+      document.title = `${productData.name} - DailyDopamin`;
+      updateCartDisplay();
+      
+      // Size selection logic
+      document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+          this.classList.add('selected');
+          selectedSize = this.dataset.size;
+        });
+      });
+      
+      // Bildanzeige initialisieren - WICHTIG für korrekte Funktionalität
+      setTimeout(function() {
+        updateImageDisplay();
+        console.log('Image display initialized');
+      }, 100);
+      
+      // Tastatur-Navigation hinzufügen
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          changeImage(-1);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          changeImage(1);
+        }
+      });
+    });
+
+    // Morphing Cart Icon Function
+    function morphCartIcon() {
+      const cartBtn = document.querySelector('.cart-icon-btn');
+      const icon = cartBtn.querySelector('.icon');
+      
+      // Step 1: Morph to loading
+      cartBtn.classList.add('morphing');
+      
+      setTimeout(() => {
+        // Step 2: Change to checkmark
+        icon.textContent = '✓';
+        cartBtn.classList.remove('morphing');
+        cartBtn.classList.add('success');
+        
+        setTimeout(() => {
+          // Step 3: Pulse effect
+          cartBtn.classList.add('pulse');
+          
+          setTimeout(() => {
+            // Step 4: Return to cart
+            cartBtn.classList.remove('pulse', 'success');
+            cartBtn.classList.add('morphing');
+            
+            setTimeout(() => {
+              icon.textContent = '🛒';
+              cartBtn.classList.remove('morphing');
+            }, 200);
+          }, 600);
+        }, 400);
+      }, 200);
+    }
+  </script>
+  <script>
+    // Produkt-spezifische Daten
+    const productData = {
+      id: 2,
+      name: 'Oversized T-Shirt "AMALFI"',
+      price: 29.99,
+      images: [
+        'img/shop/amalfi1.jpg',
+        'img/shop/amalfi2.jpg',
+        'img/shop/amalfi3.jpg',
+        'img/shop/amalfi4.jpg'
+      ]
+    };
+    
+    // Produktdaten global verfügbar machen
+    window.currentProduct = productData;
+    window.productImages = productData.images;
+  </script>
+
+  <style>
+  .cart-icon-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #4A90E2;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    transition: color 0.3s;
+  }
+  .cart-icon-btn:hover {
+    color: #6BB6FF;
+  }
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #4A90E2;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(74,144,226,0.3);
+  }
+
+  /* Cart Modal Styles - identisch mit Shop */
+  .cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .cart-modal.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .cart-modal-content {
+    background: linear-gradient(135deg, #1a1a1a 0%, #262626 100%);
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 1px solid rgba(74, 144, 226, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .cart-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+  }
+
+  .cart-modal-title {
+    color: #4A90E2;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .close-cart-btn {
+    background: none;
+    border: none;
+    color: #4A90E2;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .close-cart-btn:hover {
+    transform: scale(1.1);
+    color: #6BB6FF;
+  }
+
+  .cart-items {
+    margin-bottom: 30px;
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .cart-item-info {
+    flex: 1;
+  }
+
+  .cart-item-name {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .cart-item-price {
+    color: #4A90E2;
+    font-weight: 700;
+  }
+
+  .cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cart-total-section {
+    border-top: 2px solid rgba(74, 144, 226, 0.3);
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+
+  .cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+
+  .cart-total-final {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #4A90E2;
+    border-top: 1px solid rgba(74, 144, 226, 0.3);
+    padding-top: 15px;
+    margin-top: 15px;
+  }
+
+  .paypal-checkout-btn {
+    background: linear-gradient(135deg, #4A90E2, #6BB6FF);
+    color: #ffffff;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .paypal-checkout-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(74, 144, 226, 0.6);
+    background: linear-gradient(135deg, #6BB6FF, #4A90E2);
+  }
+
+  @media (max-width: 768px) {
+    .cart-modal-content {
+      padding: 30px;
+      margin: 20px;
+    }
+  }
+
+  /* Size Selection Styling */
+  .size-controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .size-btn {
+    background: rgba(74, 144, 226, 0.1);
+    color: #4A90E2;
+    border: 2px solid rgba(74, 144, 226, 0.3);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    min-width: 45px;
+    text-align: center;
+  }
+
+  .size-btn:hover {
+    background: rgba(74, 144, 226, 0.2);
+    border-color: rgba(74, 144, 226, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+  }
+
+  .size-btn.selected {
+    background: #4A90E2;
+    color: white;
+    border-color: #4A90E2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  }
+
+  .size-btn.selected:hover {
+    background: #3a7bc8;
+    border-color: #3a7bc8;
+  }
+  </style>
+</body>
+</html> 

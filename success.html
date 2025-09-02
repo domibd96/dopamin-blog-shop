@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bestellung erfolgreich - DailyDopamin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .success-main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .success-icon {
+      font-size: 5rem;
+      color: #4A90E2;
+      margin-bottom: 30px;
+      animation: pulse 2s infinite;
+    }
+
+    .success-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #4A90E2;
+      margin-bottom: 20px;
+      text-shadow: 0 0 30px rgba(74, 144, 226, 0.5);
+    }
+
+    .success-message {
+      color: #ffffff;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .success-details {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 25px;
+      padding: 30px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(74, 144, 226, 0.1);
+    }
+
+    .success-details h3 {
+      color: #4A90E2;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .success-details p {
+      color: #cccccc;
+      margin-bottom: 10px;
+    }
+
+    .back-to-shop-btn {
+      background: linear-gradient(135deg, #4A90E2, #6BB6FF);
+      color: #ffffff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-to-shop-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(74, 144, 226, 0.6);
+      background: linear-gradient(135deg, #6BB6FF, #4A90E2);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .success-title {
+        font-size: 2.5rem;
+      }
+      
+      .success-message {
+        font-size: 1.1rem;
+      }
+      
+      .success-details {
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .success-main {
+        padding: 40px 15px;
+      }
+      
+      .success-title {
+        font-size: 2rem;
+      }
+      
+      .success-icon {
+        font-size: 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">DailyDopamin</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="ueber.html">Über</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="success-main">
+    <div class="success-icon">✅</div>
+    <h1 class="success-title">Bestellung erfolgreich!</h1>
+    
+    <p class="success-message">
+      Vielen Dank für Ihre Bestellung! Ihre Zahlung wurde erfolgreich über PayPal abgewickelt. 
+      Sie erhalten in Kürze eine Bestellbestätigung per E-Mail.
+    </p>
+
+    <div class="success-details">
+      <h3>Was passiert als nächstes?</h3>
+      <p>✅ Ihre Bestellung wird innerhalb von 1-2 Werktagen bearbeitet</p>
+      <p>📦 Versand erfolgt innerhalb von 2-3 Werktagen</p>
+      <p>📧 Sie erhalten eine Versandbestätigung per E-Mail</p>
+      <p>📱 Tracking-Nummer wird Ihnen zugesendet</p>
+    </div>
+
+    <a href="shop.html" class="back-to-shop-btn">Zurück zum Shop</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyJourneyNotes. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Nach erfolgreicher Zahlung Warenkorb leeren
+    localStorage.removeItem('cart');
+    if (window.updateCartDisplay) window.updateCartDisplay();
+  </script>
+</body>
+</html> 

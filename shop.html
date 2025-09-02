@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - DailyDopamin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header>
+    <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">DailyDopamin</div>
+    <nav>
+      <ul class="nav-links">
+        <li><button class="invisible-click-area" aria-label="Zur Startseite"></button><a href="index.html">Home</a></li>
+        <li><button class="invisible-click-area" aria-label="Zum Blog"></button><a href="#blog">Blog</a></li>
+        <li><button class="invisible-click-area" aria-label="Zur Über-Seite"></button><a href="ueber.html">Über</a></li>
+        <li><button class="invisible-click-area" aria-label="Zur Kontakt-Seite"></button><a href="kontakt.html">Kontakt</a></li>
+        <li>
+          <button class="cart-icon-btn" aria-label="Warenkorb öffnen" onclick="openCartModal()">
+            <span class="icon">🛒</span>
+            <span class="cart-count">0</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="shop-main">
+    <h1 class="shop-header">SHOP</h1>
+    
+    <div class="shop-filters">
+      <button class="filter-btn active" data-filter="all">Alle Produkte</button>
+      <button class="filter-btn" data-filter="tshirts">T-Shirts</button>
+      <button class="filter-btn" data-filter="bags">Taschen</button>
+    </div>
+
+    <section class="products-grid" id="productsContainer">
+      <!-- Produkte werden via JavaScript geladen -->
+    </section>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-modal-content">
+      <div class="cart-modal-header">
+        <h2 class="cart-modal-title">Warenkorb</h2>
+        <button class="close-cart-btn" onclick="closeCartModal()">&times;</button>
+      </div>
+      
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items werden hier dynamisch eingefügt -->
+      </div>
+      
+      <div class="cart-total-section">
+        <div class="cart-total-row">
+          <span>Zwischensumme:</span>
+          <span id="cartSubtotal">€0.00</span>
+        </div>
+        <div class="cart-total-row">
+          <span>Versand:</span>
+          <span>€4.99</span>
+        </div>
+        <div class="cart-total-row cart-total-final">
+          <span>Gesamt:</span>
+          <span id="cartTotal">€0.00</span>
+        </div>
+      </div>
+      
+      <button class="paypal-checkout-btn" onclick="processPayPalCheckout()">
+        Mit PayPal bezahlen
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 MyJourneyNotes. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="js/shop.js"></script>
+
+  <style>
+  .cart-icon-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #4A90E2;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    transition: color 0.3s;
+  }
+  .cart-icon-btn:hover {
+    color: #FF69B4;
+  }
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+            background: #4A90E2;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(255,79,154,0.3);
+  }
+  </style>
+</body>
+</html> 

@@ -1,0 +1,321 @@
+/* Product Page Styles - ZURÜCK ZUM URSPRÜNGLICHEN ZUSTAND */
+.product-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  min-height: 100vh;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Product Images Section - SMOOTH SCROLLING */
+.product-images {
+  position: sticky;
+  top: 35px;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-image-container {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(74, 144, 226, 0.1);
+  margin-bottom: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.main-image:hover {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.main-image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.nav-btn {
+  background: rgba(74, 144, 226, 0.9);
+  color: #ffffff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.nav-btn:hover {
+  background: rgba(74, 144, 226, 1);
+  transform: scale(1.1);
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  opacity: 0.6;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  border-color: #4A90E2;
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+}
+
+/* Product Info Section - NORMALE GRÖßE WIEDERHERGESTELLT */
+.product-info {
+  padding: 20px 0;
+}
+
+.product-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #4A90E2;
+  margin-bottom: 20px;
+  text-shadow: 0 0 30px rgba(74, 144, 226, 0.5);
+  line-height: 1.2;
+}
+
+.product-price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #4A90E2;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(74, 144, 226, 0.4);
+}
+
+.product-description {
+  color: #cccccc;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(74, 144, 226, 0.1);
+}
+
+/* Product Actions - NORMALE GRÖßE */
+.product-actions {
+  margin-bottom: 50px;
+}
+
+.quantity-selector {
+  margin-bottom: 25px;
+}
+
+.quantity-selector label {
+  display: block;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 15px 25px;
+  border-radius: 25px;
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  width: fit-content;
+}
+
+.quantity-btn {
+  background: rgba(74, 144, 226, 0.1);
+  color: #4A90E2;
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.quantity-btn:hover {
+  background: rgba(74, 144, 226, 0.2);
+  border-color: #4A90E2;
+  transform: scale(1.1);
+}
+
+#quantity {
+  background: transparent;
+  border: none;
+  color: #4A90E2;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  width: 60px;
+  outline: none;
+}
+
+#quantity::-webkit-inner-spin-button,
+#quantity::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.add-to-cart-btn {
+  background: linear-gradient(135deg, #4A90E2, #6BB6FF);
+  color: #ffffff;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+  width: 100%;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(74, 144, 226, 0.6);
+  background: linear-gradient(135deg, #6BB6FF, #4A90E2);
+}
+
+/* Product Details - NORMALE GRÖßE */
+.product-details {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 25px;
+  padding: 30px;
+  border: 1px solid rgba(74, 144, 226, 0.1);
+}
+
+.detail-section {
+  margin-bottom: 30px;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.detail-section h3 {
+  color: #4A90E2;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(74, 144, 226, 0.3);
+}
+
+.detail-section p {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.size-info p {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Responsive Design - ORIGINAL ZUSTAND */
+@media (max-width: 768px) {
+  .product-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .thumbnail-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .nav-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+  
+  .main-image-container {
+    aspect-ratio: 3/4;
+  }
+  
+  .product-images {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-main {
+    padding: 20px 15px;
+  }
+  
+  .product-container {
+    gap: 30px;
+  }
+  
+  .thumbnail-container {
+    gap: 8px;
+  }
+  
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+} 
