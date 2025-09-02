@@ -496,7 +496,7 @@ function processPayPalCheckout() {
   
   // PayPal Checkout URL - URL-enkodiert für bessere Kompatibilität
   const itemName = encodeURIComponent('DailyDopamin Bestellung');
-  const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dominik.trausmuth@gmail.com&item_name=${itemName}&amount=${total.toFixed(2)}&currency_code=EUR&no_shipping=1&return=http://localhost/success.html&cancel_return=http://localhost/cancel.html`;
+  const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=yourpaypalhereitem_name=${itemName}&amount=${total.toFixed(2)}&currency_code=EUR&no_shipping=1&return=http://localhost/success.html&cancel_return=http://localhost/cancel.html`;
   
   // PayPal direkt öffnen - kein zusätzlicher Button
   const newWindow = window.open(paypalUrl, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
